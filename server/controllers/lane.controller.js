@@ -48,8 +48,8 @@ export function deleteLane(req, res) {
     }
 
     lane.notes.forEach(noteId => {
-      Note.findOne({ _id: noteId }).exec((err, note) => {
-        if (err) {
+      Note.findOne({ _id: noteId }).exec((err2, note) => {
+        if (err2) {
           res.status(500).send(err);
         }
         note.remove();
